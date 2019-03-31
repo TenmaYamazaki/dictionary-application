@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dictionary.mappers.WordMapper">
+	<resultMap type="com.example.dictionary.domain.Word" id="wordResultMap">
+		<result property="wordId" column="word_id" />
+		<result property="word" column="word" />
+		<result property="fieldId" column="field_id" />
+		<result property="wordDesc" column="word_desc" />
+	</resultMap>
+	<select id="findAll" resultMap="wordResultMap">
+		SELECT * FROM word
+	</select>
+	<select id="findByFieldId" resultMap="wordResultMap">
+		SELECT * FROM word WHERE field_id = #{id}
+	</select>
+</mapper>

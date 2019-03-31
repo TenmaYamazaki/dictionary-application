@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dictionary.mappers.FieldMapper">
+	<resultMap type="com.example.dictionary.domain.Field" id="fieldResultMap">
+		<result property="fieldId" column="field_id" />
+		<result property="fieldName" column="field_name" />
+		<result property="fieldGenre" column="field_genre" />
+	</resultMap>
+	<select id="findAll" resultMap="fieldResultMap">
+		SELECT * FROM field
+	</select>
+</mapper>
