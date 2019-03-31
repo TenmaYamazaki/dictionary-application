@@ -26,6 +26,7 @@ public class ApplecationController {
 	@GetMapping("/{className}")
 	public ResponseEntity<WebResponceResult<?>> index(@PathVariable String className) throws Exception {
 
+		String packageName = "com.example.dictionary.controller.WebReceiver.";
 		WebReceiver<?> receiver = receiverMap.get(className + "Receiver");
 
 		//initメソッドを起動する
